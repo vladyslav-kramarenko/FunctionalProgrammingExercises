@@ -1,6 +1,7 @@
 package streams.xmlFiles;
 
 import java.util.List;
+import java.util.Map;
 
 class XmlFile {
     private final String id;
@@ -34,6 +35,12 @@ class XmlFile {
                 new XmlFile("5", "ASCII", List.of(new Tag("sheet"), new Tag("column"), new Tag("row")))
         );
 
-        XmlUtils.countAllByTagName(xmlFiles, "sheet"); // returns ​{"UTF-8"=0, "ASCII"=5}
+        Map<String, Long> result = XmlUtils.countAllByTagName(xmlFiles, "sheet");
+        // returns ​{"UTF-8"=0, "ASCII"=5}
+        System.out.println(result);
+
+        Map<String, Long> result1 = XmlUtils.countAllTagName(xmlFiles, "sheet");
+        // returns ​{"UTF-8"=0, "ASCII"=2}
+        System.out.println(result1);
     }
 }
