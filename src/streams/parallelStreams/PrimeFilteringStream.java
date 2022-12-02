@@ -1,4 +1,4 @@
-package parallelStreams;
+package streams.parallelStreams;
 
 import java.util.stream.LongStream;
 
